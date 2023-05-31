@@ -1,26 +1,12 @@
-const hoursEl = document.querySelector('.hour');
-const minEl = document.querySelector('.min');
-const secEl = document.querySelector('.sec');
+const clock = document.getElementById('clock');
 
-let date = new Date();
-let hours = date.getHours();
-let min = date.getMinutes();
-let sec = date.getSeconds();
 
-hoursEl.textContent = hours;
-minEl.textContent = min;
-secEl.textContent = sec;
+window.onload = displayClock();
 
-if (sec <= 0) {
-  secEl.textContent += 0;
+function displayClock(){
+  var display = new Date().toLocaleTimeString();
+  clock.innerHTML = display;
+  setTimeout(displayClock, 1000); 
 }
 
-// setInterval(() => {
-hoursEl.textContent = hours;
-minEl.textContent = min;
-secEl.textContent = sec;
 
-if (sec <= 0) {
-  secEl.textContent += 0;
-}
-// }, 1000)
