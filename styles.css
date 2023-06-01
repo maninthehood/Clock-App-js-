@@ -1,6 +1,4 @@
-#container{
-  border: 1px solid;
-  width: 250px;
-  height: max-content;
-  padding: 23px;
+body{
+  margin: 23px;
 }
+
