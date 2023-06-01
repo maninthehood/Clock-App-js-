@@ -1,16 +1,20 @@
-const clock = document.getElementById('clock');
-const dateEl = document.getElementById('date')
+const typeEl = document.getElementById('type');
+const nameEl = document.getElementById('name');
+const dateEl = document.getElementById('date');
+const amountEl = document.getElementById('amount');
 
-window.onload = displayClock(); displayDate();
+const typeIn = document.getElementById('type-in');
+const nameIn = document.getElementById('name-in');
+const dateIn = document.getElementById('date-in');
+const amountIn = document.getElementById('amount-in');
+const submit = document.getElementById('submit');
 
-function displayClock(){
-  let display = new Date().toLocaleTimeString();
-  clock.innerHTML = display;
-  setTimeout(displayClock, 1000); 
-}
+submit.addEventListener('click', renderForm);
 
-function displayDate(){
-  let date = new Date().toLocaleDateString('en-us', { weekday:"long", year:"numeric", month:"short", day:"numeric"}) 
-  
-  dateEl.innerHTML = date;
+function renderForm(e){
+  e.preventDefault();
+  typeIn.textContent = typeIn.value;
+  nameIn.textContent = nameIn.value;
+  dateIn.textContent = dateIn.value;
+  amountIn.textContent = amountIn.value;
 }
